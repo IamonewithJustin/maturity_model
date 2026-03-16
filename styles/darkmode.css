@@ -1,0 +1,82 @@
+body.dark-theme {
+  --bg: #0d1520;
+  --surface: rgba(25, 40, 58, 0.85);
+  --surface-strong: #152030;
+  --text: #dce6f0;
+  --muted: #8a9fb5;
+  --line: rgba(180, 210, 240, 0.1);
+  --shadow: 0 22px 44px rgba(0, 0, 0, 0.35);
+  --blue-dark: #4db5e8;
+
+  background:
+    radial-gradient(circle at top left, rgba(11, 134, 207, 0.1), transparent 28%),
+    radial-gradient(circle at top right, rgba(42, 170, 65, 0.06), transparent 24%),
+    linear-gradient(180deg, #0d1520 0%, #101d2e 100%);
+}
+
+body.dark-theme .hero-copy,
+body.dark-theme .hero-wheel-card,
+body.dark-theme .panel-card,
+body.dark-theme .detail-card,
+body.dark-theme .compare-card {
+  border-color: rgba(100, 150, 200, 0.12);
+}
+
+body.dark-theme .pill-button,
+body.dark-theme .mindset-button,
+body.dark-theme .phase-step {
+  background: rgba(25, 40, 58, 0.7);
+}
+
+body.dark-theme .detail-card--headline {
+  background: linear-gradient(135deg, rgba(20, 35, 55, 0.94), rgba(15, 25, 40, 0.86));
+}
+
+body.dark-theme .phase-step.is-active {
+  background: linear-gradient(135deg, rgba(11, 134, 207, 0.2), rgba(42, 170, 65, 0.15));
+  border-color: rgba(11, 134, 207, 0.4);
+}
+
+body.dark-theme .phase-badge,
+body.dark-theme .focus-chip,
+body.dark-theme .compare-card__phase {
+  background: rgba(60, 130, 200, 0.15);
+  color: var(--blue);
+}
+
+body.dark-theme .list-icon.do {
+  background: rgba(42, 170, 65, 0.2);
+  color: #3dbb55;
+}
+
+body.dark-theme .list-icon.dont {
+  background: rgba(255, 138, 19, 0.2);
+  color: #e89230;
+}
+
+body.dark-theme .compare-card.core-card {
+  border-color: rgba(100, 150, 200, 0.2);
+}
+
+body.dark-theme .signal-card,
+body.dark-theme .list-card,
+body.dark-theme .outcome-card {
+  border-color: rgba(100, 150, 200, 0.08);
+}
+
+body.dark-theme .theme-toggle:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transition for theme switch on containers
+   (only elements that don't already have component-level transitions) */
+.hero-copy,
+.hero-wheel-card,
+.panel-card,
+.detail-card,
+.compare-card,
+.phase-badge,
+.focus-chip,
+.journey-panel {
+  transition: background-color 350ms ease, color 300ms ease, border-color 300ms ease;
+}

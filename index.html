@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culture Mindset Maturity Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ── Toolbar ─────────────────────────────────────────────────────────── -->
+    <div class="app-toolbar">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+
+    <!-- ── Hero / header ───────────────────────────────────────────────────── -->
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Interactive maturity tool</p>
+        <h1>Culture Mindset Maturity Explorer</h1>
+        <p class="hero-text">
+          Explore the five maturity phases through a cleaner, more playful experience.
+          Use the wheel, phase path, and behavior cards to move from slide chaos to usable guidance.
+        </p>
+        <div class="hero-actions">
+          <button class="pill-button is-active" data-mode-target="explore">Explore by mindset</button>
+          <button class="pill-button"           data-mode-target="compare">Compare a phase</button>
+          <button class="pill-button"           id="journey-start" type="button">Take the guided tour</button>
+        </div>
+      </div>
+
+      <!-- ── Interactive wheel ──────────────────────────────────────────────── -->
+      <div class="hero-wheel-card">
+        <div class="wheel-interactive">
+          <svg class="wheel-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maturity model wheel">
+            <defs>
+              <filter id="wheel-shadow">
+                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(13,47,110,0.18)"/>
+              </filter>
+            </defs>
+
+            <g filter="url(#wheel-shadow)">
+              <path class="wheel-segment" data-wheel-mindset="clarity" data-wheel-label="Strive for Clarity" tabindex="0"
+                d="M 290,56 A 170,170 0 0,1 290,344 L 253,285 A 100,100 0 0,0 253,115 Z"
+                fill="#0b86cf">
+                <title>Strive for Clarity</title>
+              </path>
+              <path class="wheel-segment" data-wheel-mindset="innovation" data-wheel-label="Deliver through Innovation" tabindex="0"
+                d="M 280,350 A 170,170 0 0,1 30,206 L 100,204 A 100,100 0 0,0 247,288 Z"
+                fill="#2aaa41">
+                <title>Deliver through Innovation</title>
+              </path>
+              <path class="wheel-segment" data-wheel-mindset="trust" data-wheel-label="Build Trust and Resilience" tabindex="0"
+                d="M 30,194 A 170,170 0 0,1 280,50 L 247,112 A 100,100 0 0,0 100,196 Z"
+                fill="#ff8a13">
+                <title>Build Trust and Resilience</title>
+              </path>
+
+              <circle class="wheel-segment wheel-center" data-wheel-mindset="own" data-wheel-label="Own the Outcome" tabindex="0"
+                cx="200" cy="200" r="85" fill="#0d2f6e">
+                <title>Own the Outcome</title>
+              </circle>
+            </g>
+
+            <circle cx="200" cy="200" r="88" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+            <circle cx="200" cy="200" r="172" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+            <g class="wheel-labels">
+              <text x="200" y="193" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="Inter, sans-serif">
+                <tspan x="200" dy="0">Own the</tspan>
+                <tspan x="200" dy="18">Outcome</tspan>
+              </text>
+              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
+                <tspan x="335" y="193">Strive for</tspan>
+                <tspan x="335" dy="14">Clarity</tspan>
+              </text>
+              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
+                <tspan x="133" y="310">Deliver through</tspan>
+                <tspan x="133" dy="14">Innovation</tspan>
+              </text>
+              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
+                <tspan x="133" y="76">Build Trust</tspan>
+                <tspan x="133" dy="14">&amp; Resilience</tspan>
+              </text>
+            </g>
+          </svg>
+        </div>
+        <p class="wheel-caption">
+          Click the wheel to jump to a mindset. "Own the Outcome" sits at the
+          center, while the outer rings show the three practical levers teams use to grow.
+        </p>
+      </div>
+    </header>
+
+    <!-- ── Main two-column layout ──────────────────────────────────────────── -->
+    <main class="layout">
+
+      <!-- Left: control panel -->
+      <aside class="control-panel">
+
+        <section class="panel-card">
+          <div class="phase-heading">
+            <div>
+              <p class="panel-label">Current phase</p>
+              <h2 id="phase-title">Awareness</h2>
+            </div>
+            <span class="phase-badge" id="phase-badge">Phase 1</span>
+          </div>
+          <div class="phase-stepper" id="phase-stepper">
+            <div class="stepper-track">
+              <div class="stepper-fill" id="stepper-fill"></div>
+            </div>
+            <div class="stepper-dots">
+              <button class="stepper-dot is-active" type="button" data-phase="1" aria-label="Phase 1: Awareness"><span>1</span></button>
+              <button class="stepper-dot" type="button" data-phase="2" aria-label="Phase 2: Adoption"><span>2</span></button>
+              <button class="stepper-dot" type="button" data-phase="3" aria-label="Phase 3: Integration"><span>3</span></button>
+              <button class="stepper-dot" type="button" data-phase="4" aria-label="Phase 4: Optimization"><span>4</span></button>
+              <button class="stepper-dot" type="button" data-phase="5" aria-label="Phase 5: Transformation"><span>5</span></button>
+            </div>
+          </div>
+          <div class="phase-steps" id="phase-steps"></div>
+        </section>
+
+      </aside>
+
+      <!-- Right: content panel -->
+      <section class="content-panel">
+
+        <!-- ── Explore view ──────────────────────────────────────────────────── -->
+        <div id="explore-view" class="view-section is-visible">
+
+          <section class="detail-card detail-card--headline">
+            <div class="detail-header">
+              <div>
+                <p class="panel-label">Selected mindset</p>
+                <h2 id="detail-title">Own the Outcome</h2>
+              </div>
+              <span class="focus-chip" id="focus-chip">Core model lens</span>
+            </div>
+            <p id="detail-description" class="detail-description"></p>
+          </section>
+
+          <!-- Shown when "Own the Outcome" is selected -->
+          <section id="own-outcome-panel" class="detail-card"></section>
+
+          <!-- Shown when an outer mindset is selected -->
+          <section id="mindset-panel" class="detail-card hidden">
+            <div class="detail-grid">
+              <article class="signal-card">
+                <p class="card-label">Mindset statement</p>
+                <p id="phase-statement" class="statement-text"></p>
+              </article>
+              <article class="signal-card">
+                <p class="card-label">Focused PACE values</p>
+                <p id="focus-values" class="values-text"></p>
+              </article>
+            </div>
+
+            <div class="detail-grid detail-grid--lists">
+              <article class="list-card">
+                <div class="list-card__header">
+                  <span class="list-icon do">Do</span>
+                  <h3>Helpful behaviors</h3>
+                </div>
+                <ul id="do-list" class="behavior-list"></ul>
+              </article>
+              <article class="list-card">
+                <div class="list-card__header">
+                  <span class="list-icon dont">Don't</span>
+                  <h3>Watch-outs</h3>
+                </div>
+                <ul id="dont-list" class="behavior-list"></ul>
+              </article>
+            </div>
+          </section>
+
+        </div><!-- /#explore-view -->
+
+        <!-- ── Compare view ──────────────────────────────────────────────────── -->
+        <div id="compare-view" class="view-section">
+
+          <section class="detail-card detail-card--headline">
+            <div class="detail-header">
+              <div>
+                <p class="panel-label">Phase comparison</p>
+                <h2 id="compare-title">Awareness across the model</h2>
+              </div>
+              <span class="focus-chip">Side-by-side view</span>
+            </div>
+            <p class="detail-description">
+              Switch between comparing one phase across mindsets and comparing one mindset across all five phases.
+            </p>
+            <div class="compare-toggle" id="compare-toggle">
+              <button class="pill-button is-active" type="button" data-compare-target="mindsets">Across mindsets</button>
+              <button class="pill-button"            type="button" data-compare-target="phases">Across phases</button>
+            </div>
+          </section>
+
+          <section class="compare-grid" id="compare-grid"></section>
+
+        </div><!-- /#compare-view -->
+
+      </section><!-- /.content-panel -->
+    </main>
+  </div><!-- /.app-shell -->
+
+  <!-- ── Card template (cloned by JS for compare view) ──────────────────────── -->
+  <template id="compare-card-template">
+    <article class="compare-card">
+      <div class="compare-card__header">
+        <p class="compare-card__title"></p>
+        <span class="compare-card__phase"></span>
+      </div>
+      <p class="compare-card__statement"></p>
+      <p class="compare-card__label">Do</p>
+      <ul class="compare-card__list compare-card__list--do"></ul>
+      <p class="compare-card__label">Don't</p>
+      <ul class="compare-card__list compare-card__list--dont"></ul>
+    </article>
+  </template>
+
+  <!-- ── Guided journey panel ────────────────────────────────────────────────── -->
+  <div class="journey-panel" id="journey-panel">
+    <button class="journey-close" id="journey-close" type="button" aria-label="Close guided journey">&times;</button>
+    <div class="journey-content">
+      <p class="journey-step-indicator">Step <span id="journey-step-num">1</span> of 9</p>
+      <h3 id="journey-title">Welcome</h3>
+      <p id="journey-text"></p>
+      <div class="journey-actions">
+        <button class="pill-button" id="journey-back" type="button">Back</button>
+        <button class="pill-button is-active" id="journey-next" type="button">Next</button>
+      </div>
+      <div class="journey-dots" id="journey-dots"></div>
+    </div>
+  </div>
+
+  <!-- ── Scripts ─────────────────────────────────────────────────────────────── -->
+  <script>
+    window.__appReady = false;
+    window.onerror = function(msg, src, line) {
+      var el = document.createElement("div");
+      el.style.cssText = "position:fixed;top:0;left:0;right:0;padding:14px 20px;background:#d32f2f;color:#fff;font:600 14px/1.4 Inter,sans-serif;z-index:9999;text-align:center";
+      el.textContent = "JS error: " + msg + " (line " + line + ")";
+      document.body.prepend(el);
+    };
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        if (!window.__appReady) {
+          var el = document.createElement("div");
+          el.style.cssText = "position:fixed;top:0;left:0;right:0;padding:14px 20px;background:#e65100;color:#fff;font:600 14px/1.4 Inter,sans-serif;z-index:9999;text-align:center";
+          if (location.protocol === "file:") {
+            el.textContent = "ES modules cannot load from file://. Open a terminal in this folder and run: python -m http.server 8765 — then visit http://127.0.0.1:8765";
+          } else {
+            el.textContent = "App modules failed to initialize. Check the browser console (F12) for errors.";
+          }
+          document.body.prepend(el);
+        }
+      }, 1500);
+    });
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

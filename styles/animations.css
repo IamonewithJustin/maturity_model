@@ -1,0 +1,111 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wheelSpin {
+  from {
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Hero entrance */
+.hero-copy {
+  animation: fadeSlideUp 600ms ease both;
+}
+
+.hero-wheel-card {
+  animation: fadeSlideUp 600ms ease 150ms both;
+}
+
+/* View section fade on toggle */
+.view-section.is-visible {
+  animation: fadeIn 350ms ease;
+}
+
+/* SVG wheel entrance */
+.wheel-svg {
+  animation: wheelSpin 800ms ease both;
+}
+
+/* Stagger: compare cards */
+.compare-card {
+  animation: fadeSlideUp 400ms ease both;
+}
+
+.compare-card:nth-child(1) { animation-delay: 0ms; }
+.compare-card:nth-child(2) { animation-delay: 80ms; }
+.compare-card:nth-child(3) { animation-delay: 160ms; }
+.compare-card:nth-child(4) { animation-delay: 240ms; }
+.compare-card:nth-child(5) { animation-delay: 320ms; }
+
+/* Stagger: outcome cards */
+.outcome-card {
+  animation: fadeSlideUp 400ms ease both;
+}
+
+.own-outcome-grid .outcome-card:nth-child(1) { animation-delay: 0ms; }
+.own-outcome-grid .outcome-card:nth-child(2) { animation-delay: 80ms; }
+.own-outcome-grid .outcome-card:nth-child(3) { animation-delay: 160ms; }
+
+/* Stagger: phase steps */
+.phase-step {
+  animation: fadeSlideUp 300ms ease both;
+}
+
+.phase-steps .phase-step:nth-child(1) { animation-delay: 0ms; }
+.phase-steps .phase-step:nth-child(2) { animation-delay: 50ms; }
+.phase-steps .phase-step:nth-child(3) { animation-delay: 100ms; }
+.phase-steps .phase-step:nth-child(4) { animation-delay: 150ms; }
+.phase-steps .phase-step:nth-child(5) { animation-delay: 200ms; }
+
+/* Stagger: behavior list items */
+.behavior-list li {
+  animation: fadeSlideUp 300ms ease both;
+}
+
+.behavior-list li:nth-child(1) { animation-delay: 0ms; }
+.behavior-list li:nth-child(2) { animation-delay: 50ms; }
+.behavior-list li:nth-child(3) { animation-delay: 100ms; }
+.behavior-list li:nth-child(4) { animation-delay: 150ms; }
+.behavior-list li:nth-child(5) { animation-delay: 200ms; }
+
+/* Micro-interactions: card hover lift */
+.signal-card,
+.list-card,
+.outcome-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.signal-card:hover,
+.list-card:hover,
+.outcome-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(4, 95, 155, 0.14);
+}
+
+/* Stepper dot pop */
+.stepper-dot {
+  transition: all 250ms ease;
+}
+
+/* Journey panel entrance */
+.journey-panel.is-visible {
+  animation: fadeSlideUp 400ms ease;
+}
