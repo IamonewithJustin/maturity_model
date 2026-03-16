@@ -2,19 +2,25 @@
 
 Static interactive tool built from `maturity model.pptx`.
 
-## Open It
+## Open It (No Terminal Needed)
 
-Option 1:
-Open `index.html` directly in a browser.
+### Option 1: Double-click launcher (Windows)
 
-Option 2:
-From this folder, run:
+1. Double-click `Launch App.bat`
+2. Your browser opens automatically at [http://127.0.0.1:8765](http://127.0.0.1:8765)
+3. Keep the server window open while using the app
 
-```powershell
-python -m http.server 8765
-```
+This uses PowerShell (built into Windows) and does not require Python.
+If `8765` is busy, it now automatically uses the next available local port.
 
-Then open [http://127.0.0.1:8765](http://127.0.0.1:8765).
+### Option 2: Share as a URL (recommended for end users)
+
+This repo now includes a GitHub Pages workflow at `.github/workflows/deploy-pages.yml`.
+After GitHub Pages is enabled for this repo, users can open:
+
+[https://iamonewithjustin.github.io/maturity_model/](https://iamonewithjustin.github.io/maturity_model/)
+
+No install and no local setup needed.
 
 ## What It Includes
 
