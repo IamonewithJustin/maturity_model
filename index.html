@@ -9,125 +9,38 @@
 <body>
   <div class="app-shell">
 
-    <!-- ── Toolbar ─────────────────────────────────────────────────────────── -->
-    <div class="app-toolbar">
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-        <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-
     <!-- ── Hero / header ───────────────────────────────────────────────────── -->
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Interactive maturity tool</p>
-        <h1>Culture Mindset Maturity Explorer</h1>
+        <p class="eyebrow">Outcomes 1.0 Interactive STS culture tool</p>
+        <h1>STS Outcomes 1.0 - Interactive culture tool</h1>
         <p class="hero-text">
-          Explore the five maturity phases through a cleaner, more playful experience.
-          Use the wheel, phase path, and behavior cards to move from slide chaos to usable guidance.
+          Explore the Cultural Maturity Model Using the Culture Wheel, Phase Path, and Behavior Cards.
         </p>
         <div class="hero-actions">
-          <button class="pill-button is-active" data-mode-target="explore">Explore by mindset</button>
-          <button class="pill-button"           data-mode-target="compare">Compare a phase</button>
           <button class="pill-button"           id="journey-start" type="button">Take the guided tour</button>
         </div>
       </div>
-
-      <!-- ── Interactive wheel ──────────────────────────────────────────────── -->
-      <div class="hero-wheel-card">
-        <div class="wheel-interactive">
-          <svg class="wheel-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maturity model wheel">
-            <defs>
-              <filter id="wheel-shadow">
-                <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(13,47,110,0.18)"/>
-              </filter>
-            </defs>
-
-            <g filter="url(#wheel-shadow)">
-              <path class="wheel-segment" data-wheel-mindset="clarity" data-wheel-label="Strive for Clarity" tabindex="0"
-                d="M 290,56 A 170,170 0 0,1 290,344 L 253,285 A 100,100 0 0,0 253,115 Z"
-                fill="#0b86cf">
-                <title>Strive for Clarity</title>
-              </path>
-              <path class="wheel-segment" data-wheel-mindset="innovation" data-wheel-label="Deliver through Innovation" tabindex="0"
-                d="M 280,350 A 170,170 0 0,1 30,206 L 100,204 A 100,100 0 0,0 247,288 Z"
-                fill="#2aaa41">
-                <title>Deliver through Innovation</title>
-              </path>
-              <path class="wheel-segment" data-wheel-mindset="trust" data-wheel-label="Build Trust and Resilience" tabindex="0"
-                d="M 30,194 A 170,170 0 0,1 280,50 L 247,112 A 100,100 0 0,0 100,196 Z"
-                fill="#ff8a13">
-                <title>Build Trust and Resilience</title>
-              </path>
-
-              <circle class="wheel-segment wheel-center" data-wheel-mindset="own" data-wheel-label="Own the Outcome" tabindex="0"
-                cx="200" cy="200" r="85" fill="#0d2f6e">
-                <title>Own the Outcome</title>
-              </circle>
-            </g>
-
-            <circle cx="200" cy="200" r="88" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-            <circle cx="200" cy="200" r="172" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-
-            <g class="wheel-labels">
-              <text x="200" y="193" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="Inter, sans-serif">
-                <tspan x="200" dy="0">Own the</tspan>
-                <tspan x="200" dy="18">Outcome</tspan>
-              </text>
-              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
-                <tspan x="335" y="193">Strive for</tspan>
-                <tspan x="335" dy="14">Clarity</tspan>
-              </text>
-              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
-                <tspan x="133" y="310">Deliver through</tspan>
-                <tspan x="133" dy="14">Innovation</tspan>
-              </text>
-              <text text-anchor="middle" fill="#fff" font-size="10.5" font-weight="600" font-family="Inter, sans-serif">
-                <tspan x="133" y="76">Build Trust</tspan>
-                <tspan x="133" dy="14">&amp; Resilience</tspan>
-              </text>
-            </g>
-          </svg>
-        </div>
-        <p class="wheel-caption">
-          Click the wheel to jump to a mindset. "Own the Outcome" sits at the
-          center, while the outer rings show the three practical levers teams use to grow.
-        </p>
-      </div>
     </header>
 
-    <!-- ── Main two-column layout ──────────────────────────────────────────── -->
+    <section class="top-row">
+      <div class="hero-wheel-card">
+        <p class="wheel-label-pill">Explore a culture mindset</p>
+        <div class="wheel-interactive">
+          <img class="wheel-svg wheel-image" src="assets/wheel-clickable.png" alt="Maturity model wheel">
+          <button class="wheel-segment wheel-hit wheel-hit--clarity" type="button" data-wheel-mindset="clarity" aria-label="Select Strive for Clarity"></button>
+          <button class="wheel-segment wheel-hit wheel-hit--innovation" type="button" data-wheel-mindset="innovation" aria-label="Select Deliver through Innovation"></button>
+          <button class="wheel-segment wheel-hit wheel-hit--trust" type="button" data-wheel-mindset="trust" aria-label="Select Build Trust and Resilience"></button>
+          <button class="wheel-segment wheel-hit wheel-hit--own" type="button" data-wheel-mindset="own" aria-label="Select Own the Outcome"></button>
+        </div>
+        <p class="wheel-caption">
+          Click the wheel to explore a culture mindset.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Main full-width content ──────────────────────────────────────────── -->
     <main class="layout">
-
-      <!-- Left: control panel -->
-      <aside class="control-panel">
-
-        <section class="panel-card">
-          <div class="phase-heading">
-            <div>
-              <p class="panel-label">Current phase</p>
-              <h2 id="phase-title">Awareness</h2>
-            </div>
-            <span class="phase-badge" id="phase-badge">Phase 1</span>
-          </div>
-          <div class="phase-stepper" id="phase-stepper">
-            <div class="stepper-track">
-              <div class="stepper-fill" id="stepper-fill"></div>
-            </div>
-            <div class="stepper-dots">
-              <button class="stepper-dot is-active" type="button" data-phase="1" aria-label="Phase 1: Awareness"><span>1</span></button>
-              <button class="stepper-dot" type="button" data-phase="2" aria-label="Phase 2: Adoption"><span>2</span></button>
-              <button class="stepper-dot" type="button" data-phase="3" aria-label="Phase 3: Integration"><span>3</span></button>
-              <button class="stepper-dot" type="button" data-phase="4" aria-label="Phase 4: Optimization"><span>4</span></button>
-              <button class="stepper-dot" type="button" data-phase="5" aria-label="Phase 5: Transformation"><span>5</span></button>
-            </div>
-          </div>
-          <div class="phase-steps" id="phase-steps"></div>
-        </section>
-
-      </aside>
-
-      <!-- Right: content panel -->
       <section class="content-panel">
 
         <!-- ── Explore view ──────────────────────────────────────────────────── -->
@@ -144,19 +57,26 @@
             <p id="detail-description" class="detail-description"></p>
           </section>
 
+          <section class="panel-card phase-panel-card">
+            <p class="phase-panel-label">Explore the phases of your cultural mindset</p>
+            <div class="phase-heading">
+              <div>
+                <p class="panel-label">Current phase</p>
+                <h2 id="phase-title">Phase 1 - Awareness</h2>
+              </div>
+            </div>
+            <div class="phase-steps phase-steps--horizontal" id="phase-steps"></div>
+          </section>
+
           <!-- Shown when "Own the Outcome" is selected -->
           <section id="own-outcome-panel" class="detail-card"></section>
 
           <!-- Shown when an outer mindset is selected -->
           <section id="mindset-panel" class="detail-card hidden">
-            <div class="detail-grid">
+            <div class="detail-grid detail-grid--single">
               <article class="signal-card">
                 <p class="card-label">Mindset statement</p>
                 <p id="phase-statement" class="statement-text"></p>
-              </article>
-              <article class="signal-card">
-                <p class="card-label">Focused PACE values</p>
-                <p id="focus-values" class="values-text"></p>
               </article>
             </div>
 

@@ -1,13 +1,13 @@
-import { compareModeButtons, modeButtons, stepperDots, wheelButtons } from "./core/dom.js";
+import { compareModeButtons, modeButtons, wheelButtons } from "./core/dom.js";
 import { state } from "./core/state.js";
 import { journeySteps } from "./data/journey.js";
 import { renderCompareView } from "./render/compare.js";
 import {
   renderHeader,
+  renderMindsetHeader,
   renderMindsetPanel,
   renderOwnOutcomePanel,
   renderPhaseSteps,
-  renderStepper,
   renderWheelState
 } from "./render/explore.js";
 import { renderJourney } from "./render/journey.js";
@@ -15,8 +15,8 @@ import { renderMode } from "./render/mode.js";
 
 function render() {
   renderHeader();
+  renderMindsetHeader();
   renderWheelState();
-  renderStepper();
   renderPhaseSteps((phaseId) => {
     state.selectedPhase = phaseId;
     render();
@@ -28,13 +28,13 @@ function render() {
   renderJourney();
 }
 
-// Phase stepper dots
-stepperDots.forEach((dot) => {
-  dot.addEventListener("click", () => {
-    state.selectedPhase = Number(dot.dataset.phase);
-    render();
-  });
-});
+function renderMindsetsOnly() {
+  renderMindsetHeader();
+  renderWheelState();
+  renderOwnOutcomePanel();
+  renderMindsetPanel();
+  renderMode();
+}
 
 // Mode toggle (explore / compare)
 modeButtons.forEach((button) => {
@@ -58,7 +58,7 @@ wheelButtons.forEach((button) => {
   button.addEventListener("click", () => {
     state.selectedMindset = button.dataset.wheelMindset;
     state.mode = "explore";
-    render();
+    renderMindsetsOnly();
   });
 
   button.addEventListener("keydown", (event) => {
@@ -66,23 +66,9 @@ wheelButtons.forEach((button) => {
       event.preventDefault();
       state.selectedMindset = button.dataset.wheelMindset;
       state.mode = "explore";
-      render();
+      renderMindsetsOnly();
     }
   });
-});
-
-// Dark mode toggle
-const themeToggle = document.getElementById("theme-toggle");
-const savedTheme = localStorage.getItem("theme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-  document.body.classList.add("dark-theme");
-}
-
-themeToggle.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-theme");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
 // Guided journey

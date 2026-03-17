@@ -5,7 +5,7 @@ export const mindsets = [
     color: "#0d2f6e",
     focus: "Core model lens",
     description:
-      "The original deck positions `Own the Outcome` at the center of the model. It is the umbrella mindset expressed through the three outer mindsets below, rather than a separate detailed behavior track in the source slides."
+      "Own the Outcome is the umbrella mindset expressed through the three outer mindsets."
   },
   {
     id: "clarity",

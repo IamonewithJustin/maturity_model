@@ -2,6 +2,7 @@ import { mindsets } from "../data/mindsets.js";
 import { phases } from "../data/phases.js";
 import { compareCardTemplate, compareGrid, compareTitle } from "../core/dom.js";
 import {
+  applyUnderlineEmphasis,
   createListItems,
   getCurrentPhase,
   getMindset,
@@ -26,7 +27,7 @@ export function renderCompareView() {
         card.style.borderTop = `6px solid ${entry.color}`;
         card.querySelector(".compare-card__title").textContent = entry.label;
         card.querySelector(".compare-card__phase").textContent = phase.badge;
-        card.querySelector(".compare-card__statement").textContent = details.statement;
+        card.querySelector(".compare-card__statement").innerHTML = applyUnderlineEmphasis(details.statement);
         card.querySelector(".compare-card__list--do").innerHTML = createListItems(details.do);
         card.querySelector(".compare-card__list--dont").innerHTML = createListItems(details.dont);
         compareGrid.appendChild(card);
@@ -57,7 +58,7 @@ export function renderCompareView() {
       ]);
     } else {
       const details = mindset.phases[entry.id];
-      card.querySelector(".compare-card__statement").textContent = details.statement;
+      card.querySelector(".compare-card__statement").innerHTML = applyUnderlineEmphasis(details.statement);
       card.querySelector(".compare-card__list--do").innerHTML = createListItems(details.do);
       card.querySelector(".compare-card__list--dont").innerHTML = createListItems(details.dont);
     }

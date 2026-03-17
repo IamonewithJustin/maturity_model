@@ -1,13 +1,11 @@
 export const phaseSteps = document.getElementById("phase-steps");
 export const phaseTitle = document.getElementById("phase-title");
-export const phaseBadge = document.getElementById("phase-badge");
 export const detailTitle = document.getElementById("detail-title");
 export const detailDescription = document.getElementById("detail-description");
 export const focusChip = document.getElementById("focus-chip");
 export const ownOutcomePanel = document.getElementById("own-outcome-panel");
 export const mindsetPanel = document.getElementById("mindset-panel");
 export const phaseStatement = document.getElementById("phase-statement");
-export const focusValues = document.getElementById("focus-values");
 export const doList = document.getElementById("do-list");
 export const dontList = document.getElementById("dont-list");
 export const compareTitle = document.getElementById("compare-title");
@@ -19,6 +17,3 @@ export const compareCardTemplate = document.getElementById("compare-card-templat
 export const modeButtons = Array.from(document.querySelectorAll("[data-mode-target]"));
 export const compareModeButtons = Array.from(document.querySelectorAll("[data-compare-target]"));
 export const wheelButtons = Array.from(document.querySelectorAll("[data-wheel-mindset]"));
-
-export const stepperDots = Array.from(document.querySelectorAll(".stepper-dot"));
-export const stepperFill = document.getElementById("stepper-fill");

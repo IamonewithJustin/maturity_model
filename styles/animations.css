@@ -25,6 +25,16 @@
   }
 }
 
+@keyframes journeyGlow {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(255, 77, 109, 0.3);
+  }
+  50% {
+    box-shadow: 0 14px 34px rgba(255, 77, 109, 0.52);
+  }
+}
+
 /* Hero entrance */
 .hero-copy {
   animation: fadeSlideUp 600ms ease both;
