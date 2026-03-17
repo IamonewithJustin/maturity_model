@@ -5,7 +5,7 @@ export const journeySteps = [
     title: "Read the model as progression",
     subLabel: "Overview",
     text:
-      "This guided tour walks through every phase of every mindset so you can see how cultural maturity grows. Watch how the language moves from personal awareness to influence across teams and the organization.",
+      "This guided tour walks you through each phase of the STS Outcomes 1.0 mindset so you can see how cultural maturity grows. Watch how the language moves from personal awareness to influence across teams and the organization.",
     whatChangesNow:
       "Across the whole model, progression follows a consistent arc: understand, apply, align, challenge, and shape.",
     reflectionPrompt:
@@ -21,7 +21,7 @@ export const journeySteps = [
     text:
       "Own the Outcome sits at the center as the umbrella mindset. The three outer mindsets show the practical ways progress becomes visible: clarity, innovation, and trust and resilience.",
     whatChangesNow:
-      "The center tells you what the three outer mindsets mean when they are working together at the same phase.",
+      "The center tells you what the three outer mindsets mean when they are working together.",
     reflectionPrompt:
       "Notice that the outer mindsets are distinct, but all of them contribute to stronger outcomes.",
     target: ["wheel", "own-panel"],
@@ -320,34 +320,6 @@ export const journeySteps = [
       "Look for evidence that outcomes are being shaped through strategy, capability building, and stronger cross-organizational connection.",
     target: ["wheel", "phase-panel", "own-panel"],
     state: { mode: "explore", selectedMindset: "own", selectedPhase: 5 }
-  },
-  {
-    id: "compare-phase-across-model",
-    chapter: "Compare and Synthesize",
-    title: "Compare one phase across the model",
-    subLabel: "Compare mode | Across mindsets",
-    text:
-      "In compare mode, one phase across all three outer mindsets shows that maturity is never one-dimensional. The same phase can emphasize context, experimentation, or trust depending on which mindset you are looking at.",
-    whatChangesNow:
-      "This view helps you see a shared maturity level as a pattern of different strengths rather than a single trait.",
-    reflectionPrompt:
-      "Ask which mindset is strongest at this phase and which one may be lagging behind it.",
-    target: ["compare-header", "compare-toggle", "compare-grid"],
-    state: { mode: "compare", selectedMindset: "own", selectedPhase: 3, compareMode: "mindsets" }
-  },
-  {
-    id: "compare-mindset-across-phases",
-    chapter: "Compare and Synthesize",
-    title: "Compare one mindset across all phases",
-    subLabel: "Compare mode | Across phases",
-    text:
-      "When you compare a single mindset across all five phases, the developmental arc becomes clear. You can trace how responsibility expands from personal practice to team enablement to system-shaping leadership.",
-    whatChangesNow:
-      "This view is the clearest way to see what truly changes between adjacent phases.",
-    reflectionPrompt:
-      "Ask what new responsibility appears at each phase rather than just what new activity is listed.",
-    target: ["compare-header", "compare-toggle", "compare-grid"],
-    state: { mode: "compare", selectedMindset: "clarity", selectedPhase: 1, compareMode: "phases" }
   },
   {
     id: "tour-finish",

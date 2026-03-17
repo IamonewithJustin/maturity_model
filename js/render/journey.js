@@ -1,9 +1,14 @@
 import { journeySteps } from "../data/journey.js";
 import { state } from "../core/state.js";
 
+const TOUR_HIGHLIGHT_CLASS = "tour-highlight";
+
 function clearTourFocus() {
   document.querySelectorAll(".is-tour-focus").forEach((element) => {
     element.classList.remove("is-tour-focus");
+  });
+  document.querySelectorAll(`.${TOUR_HIGHLIGHT_CLASS}`).forEach((element) => {
+    element.classList.remove(TOUR_HIGHLIGHT_CLASS);
   });
 }
 
@@ -17,14 +22,22 @@ function getVisibleTourTarget(targetName) {
 
 function applyTourFocus(step, panel) {
   clearTourFocus();
+  const isFirstStep = state.journeyStep === 0;
+  const isLastStep = state.journeyStep === journeySteps.length - 1;
+  const emphasize = !isFirstStep && !isLastStep;
+
   const targets = Array.isArray(step.target) ? step.target : step.target ? [step.target] : [];
   const elements = targets
     .map((targetName) => getVisibleTourTarget(targetName))
     .filter(Boolean);
 
-  elements.forEach((element) => {
-    element.classList.add("is-tour-focus");
-  });
+  if (emphasize) {
+    elements.forEach((element) => {
+      element.classList.add("is-tour-focus");
+    });
+    const activePhaseStep = document.querySelector(".phase-step.is-active");
+    if (activePhaseStep) activePhaseStep.classList.add(TOUR_HIGHLIGHT_CLASS);
+  }
 
   const phasePanelTarget = elements.find((element) => element.matches("[data-tour-target~='phase-panel']"));
   const firstTarget = phasePanelTarget || elements[0];

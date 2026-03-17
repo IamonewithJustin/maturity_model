@@ -35,6 +35,16 @@
   }
 }
 
+@keyframes tourHighlightPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.06);
+  }
+}
+
 /* Hero entrance */
 .hero-copy {
   animation: fadeSlideUp 600ms ease both;
