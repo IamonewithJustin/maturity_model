@@ -1,18 +1,18 @@
 .app-shell {
-  max-width: 1440px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 28px;
+  padding: 16px;
 }
 
 .hero {
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .top-row {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .layout {
@@ -23,18 +23,18 @@
 .content-panel {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
 }
 
 .panel-card,
 .detail-card {
-  padding: 24px;
+  padding: 16px;
 }
 
 .mindset-list,
 .phase-steps {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .phase-steps--horizontal {
@@ -47,20 +47,20 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .phase-heading h2,
 .detail-header h2 {
   margin: 2px 0 0;
-  font-size: 1.45rem;
+  font-size: 1.18rem;
 }
 
 .own-outcome-grid,
 .detail-grid,
 .compare-grid {
   display: grid;
-  gap: 18px;
+  gap: 12px;
 }
 
 .own-outcome-grid {
@@ -77,7 +77,7 @@
 
 .detail-grid--lists,
 .compare-grid {
-  margin-top: 18px;
+  margin-top: 12px;
 }
 
 .compare-grid {

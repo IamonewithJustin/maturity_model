@@ -11,19 +11,19 @@
 
     <!-- ── Hero / header ───────────────────────────────────────────────────── -->
     <header class="hero">
-      <div class="hero-copy">
+      <div class="hero-copy" data-tour-target="hero">
         <h1>STS Outcomes 1.0 - Interactive Culture Tool</h1>
         <p class="hero-text">
           Explore the cultural maturity model using the culture wheel, phase path, and behavior cards.
         </p>
         <div class="hero-actions">
-          <button class="pill-button"           id="journey-start" type="button">Take the guided tour</button>
+          <button class="pill-button" id="journey-start" type="button" data-tour-target="journey-start">Take the guided tour</button>
         </div>
       </div>
     </header>
 
     <section class="top-row">
-      <div class="hero-wheel-card">
+      <div class="hero-wheel-card" data-tour-target="wheel">
         <p class="wheel-label-pill">Explore a culture mindset</p>
         <div class="wheel-interactive">
           <img class="wheel-svg wheel-image" src="assets/wheel-clickable.png" alt="Maturity model wheel">
@@ -45,7 +45,7 @@
         <!-- ── Explore view ──────────────────────────────────────────────────── -->
         <div id="explore-view" class="view-section is-visible">
 
-          <section class="detail-card detail-card--headline">
+          <section class="detail-card detail-card--headline" data-tour-target="mindset-header">
             <div class="detail-header">
               <div>
                 <p class="panel-label">Selected mindset</p>
@@ -56,7 +56,7 @@
             <p id="detail-description" class="detail-description"></p>
           </section>
 
-          <section class="panel-card phase-panel-card">
+          <section class="panel-card phase-panel-card" data-tour-target="phase-panel">
             <p class="phase-panel-label">Explore the phases of your cultural mindset</p>
             <div class="phase-heading">
               <div>
@@ -68,18 +68,18 @@
           </section>
 
           <!-- Shown when "Own the Outcome" is selected -->
-          <section id="own-outcome-panel" class="detail-card"></section>
+          <section id="own-outcome-panel" class="detail-card" data-tour-target="own-panel"></section>
 
           <!-- Shown when an outer mindset is selected -->
-          <section id="mindset-panel" class="detail-card hidden">
+          <section id="mindset-panel" class="detail-card hidden" data-tour-target="mindset-panel">
             <div class="detail-grid detail-grid--single">
-              <article class="signal-card">
+              <article class="signal-card" data-tour-target="mindset-statement">
                 <p class="card-label">Mindset statement</p>
                 <p id="phase-statement" class="statement-text"></p>
               </article>
             </div>
 
-            <div class="detail-grid detail-grid--lists">
+            <div class="detail-grid detail-grid--lists" data-tour-target="behavior-cards">
               <article class="list-card">
                 <div class="list-card__header">
                   <span class="list-icon do">Do</span>
@@ -102,7 +102,7 @@
         <!-- ── Compare view ──────────────────────────────────────────────────── -->
         <div id="compare-view" class="view-section">
 
-          <section class="detail-card detail-card--headline">
+          <section class="detail-card detail-card--headline" data-tour-target="compare-header">
             <div class="detail-header">
               <div>
                 <p class="panel-label">Phase comparison</p>
@@ -113,13 +113,13 @@
             <p class="detail-description">
               Switch between comparing one phase across mindsets and comparing one mindset across all five phases.
             </p>
-            <div class="compare-toggle" id="compare-toggle">
+            <div class="compare-toggle" id="compare-toggle" data-tour-target="compare-toggle">
               <button class="pill-button is-active" type="button" data-compare-target="mindsets">Across mindsets</button>
               <button class="pill-button"            type="button" data-compare-target="phases">Across phases</button>
             </div>
           </section>
 
-          <section class="compare-grid" id="compare-grid"></section>
+          <section class="compare-grid" id="compare-grid" data-tour-target="compare-grid"></section>
 
         </div><!-- /#compare-view -->
 
@@ -146,9 +146,27 @@
   <div class="journey-panel" id="journey-panel">
     <button class="journey-close" id="journey-close" type="button" aria-label="Close guided journey">&times;</button>
     <div class="journey-content">
-      <p class="journey-step-indicator">Step <span id="journey-step-num">1</span> of 9</p>
-      <h3 id="journey-title">Welcome</h3>
-      <p id="journey-text"></p>
+      <div class="journey-meta" data-journey-drag-handle="true">
+        <p class="journey-step-indicator">Step <span id="journey-step-num">1</span> of <span id="journey-step-total">1</span></p>
+        <p class="journey-chapter" id="journey-chapter">How to Use This Tour</p>
+      </div>
+      <h3 id="journey-title" data-journey-drag-handle="true">Welcome</h3>
+      <p class="journey-sub-label" id="journey-sub-label" hidden></p>
+      <p class="journey-text" id="journey-text"></p>
+      <div class="journey-callout" id="journey-what-changes" hidden>
+        <p class="journey-callout__label">What changes here</p>
+        <p class="journey-callout__text" id="journey-what-changes-text"></p>
+      </div>
+      <div class="journey-callout journey-callout--reflection" id="journey-reflection" hidden>
+        <p class="journey-callout__label">What to watch for</p>
+        <p class="journey-callout__text" id="journey-reflection-text"></p>
+      </div>
+      <div class="journey-progress">
+        <div class="journey-progress-track">
+          <div class="journey-progress-fill" id="journey-progress-fill"></div>
+        </div>
+        <p class="journey-progress-label" id="journey-progress-label">0% complete</p>
+      </div>
       <div class="journey-actions">
         <button class="pill-button" id="journey-back" type="button">Back</button>
         <button class="pill-button is-active" id="journey-next" type="button">Next</button>
