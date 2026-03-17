@@ -54,12 +54,21 @@ compareModeButtons.forEach((button) => {
   });
 });
 
+// Scroll to the selected mindset card (used after wheel click)
+function scrollToSelectedMindsetCard() {
+  const card = document.querySelector('[data-tour-target="mindset-header"]');
+  if (card) {
+    card.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 // Wheel segment interaction
 wheelButtons.forEach((button) => {
   button.addEventListener("click", () => {
     state.selectedMindset = button.dataset.wheelMindset;
     state.mode = "explore";
     renderMindsetsOnly();
+    scrollToSelectedMindsetCard();
   });
 
   button.addEventListener("keydown", (event) => {
@@ -68,6 +77,7 @@ wheelButtons.forEach((button) => {
       state.selectedMindset = button.dataset.wheelMindset;
       state.mode = "explore";
       renderMindsetsOnly();
+      scrollToSelectedMindsetCard();
     }
   });
 });
